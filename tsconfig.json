@@ -1,3 +1,52 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      // Assets folder (path: src/app/assets)
+      "@constants/*": ["src/app/assets/constants/*"],
+      "@icons/*": ["src/app/assets/icons/*"],
+      "@images/*": ["src/app/assets/images/*"],
+      "@styles/*": ["src/app/assets/styles/*"],
+      // Components: All common components (e.g.: Button, Modal, etc.)
+      "@components/*": ["src/app/components/*"],
+      // lottie: All lottie related files (e.g.: Lottie animations etc.)
+      "@lottie/*": ["src/app/lottie/*"],
+      // API: All API related files (e.g.: API calls, configurations, etc.)
+      "@api/*": ["src/app/controllers/api*"],
+      // Formatters: All Formatters related files (e.g.: Formatters etc.)
+      "@formatters/*": ["src/app/controllers/formatters/*"],
+      // Local-Data: All Local Data related files (e.g.: Data etc.)
+      "@localData/*": ["src/app/controllers/local-data/*"],
+      // Local-Store: All Local store related files (e.g.: Local Store Data etc.)
+      "@localStore/*": ["src/app/controllers/local-store/*"],
+      // Models: All Local store related files (e.g.: Realm Models etc.)
+      "@models/*": ["src/app/controllers/models/*"],
+      // Validators: All validators files (e.g.: Login, sign-up etc.)
+      "@validators/*": ["src/app/controllers/validators/*"],
+      // Helper: Hooks and Utilities
+      "@helper/*": ["src/app/helper/*"],
+      // Layouts: Common layout for screens
+      "@layouts/*": ["src/app/layouts/*"],
+      // Modules: Screens as modules (e.g.: Home, Profile, etc.)
+      "@modules/*": ["src/app/modules/*"],
+      // Packages for internal usage (e.g.: asyncStorage, realm, etc.)
+      "@packages/*": ["src/app/packages/*"],
+      // Provider: Global providers for application (e.g.: Redux, Realm, etc.)
+      "@provider/*": ["src/app/provider/*"],
+      // Store: All state management related files (e.g. configuration, slices, etc.)
+      "@store/*": ["src/app/store/*"],
+      // Routes: All routes for application (e.g.: Login, Register, etc.)
+      "@routes/*": ["src/app/routes/*"],
+      // Services: All services for application (e.g.: API calls, caching etc.)
+      "@services/*": ["src/app/services/*"],
+      // States: All redux states for application (e.g.: caching data etc.)
+      "@states/*": ["src/app/states/*"],
+      // Types: All commonly used types for application (e.g.: interfaces, enums etc.)
+      "@entity-models/*": ["src/app/entity-models/*"],
+      // Utils: All utility functions for application (e.g.: date, time, etc.)
+      "@/*": ["src/*"] // Root path
+    }
+  }
 }
