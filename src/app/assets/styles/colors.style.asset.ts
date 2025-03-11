@@ -2,7 +2,7 @@ import hexToRgbA from '@components/button/ripple/hexaToRgba';
 import {
   DarkTheme,
   DefaultTheme,
-  Theme as NativeTheme,
+  Theme,
 } from '@react-navigation/native';
 import {ColorValue} from 'react-native';
 
@@ -47,11 +47,25 @@ interface Colors {
   shadow: ColorValue;
 }
 
-interface ThemeColors extends Omit<NativeTheme, 'colors'> {
+interface ThemeColors extends Omit<Theme, 'colors'> {
   colors: Colors;
 }
 
-const appColors: Record<ColorMode, ThemeColors> = {
+const navigationTheme = (colors: Colors, isDark: boolean): Theme => ({
+  dark: isDark,
+  colors: {
+    ...isDark ? DarkTheme.colors : DefaultTheme.colors,
+    primary: colors.primary as string,
+    background: colors.background as string,
+    card: colors.card as string,
+    text: colors.text as string,
+    border: colors.border as string,
+    notification: colors.notification as string,
+  },
+  fonts: DefaultTheme.fonts
+});
+
+const appColors: Record<ColorMode, ThemeColors> & { getNavigationTheme: (mode: ColorMode) => Theme } = {
   light: {
     ...DefaultTheme,
     colors: {
@@ -136,6 +150,7 @@ const appColors: Record<ColorMode, ThemeColors> = {
       shadow: '#B0B1B2',
     },
   },
+  getNavigationTheme: (mode: ColorMode) => navigationTheme(appColors[mode].colors, mode === 'dark'),
 };
 
 export type {ColorMode, Colors};

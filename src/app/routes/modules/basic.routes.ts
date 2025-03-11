@@ -1,8 +1,6 @@
 import {screens} from '@routes/routeName.routes';
 import {RouteProps} from '@entity-models/common.types';
 import SplashIndex from '@modules/splash';
-import OnBoardingIndex from '@modules/onBoarding';
-import HomeIndex from '@modules/splash/HomeIndex';
 
 const basicRoutes: Array<RouteProps> = [
   {

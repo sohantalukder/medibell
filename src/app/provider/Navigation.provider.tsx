@@ -11,7 +11,7 @@ interface Props {
 
 const NavigationProvider: React.FC<Props> = ({children}) => {
   const colorScheme = useColorScheme();
-  const theme = appColors[colorScheme === 'dark' ? 'dark' : 'light'];
+  const theme = appColors.getNavigationTheme(colorScheme === 'dark' ? 'dark' : 'light');
   return (
     <NavigationContainer theme={theme}>
       {children}
