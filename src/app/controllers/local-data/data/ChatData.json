@@ -1,0 +1,554 @@
+{
+  "chats/list": {
+    "payload": {
+      "page": 1,
+      "perPage": 20,
+      "needPagination": false
+    },
+    "method": "POST",
+    "success": true,
+    "message": "Got chats list data",
+    "data": [
+      {
+        "id": "1",
+        "name": "John Smith",
+        "message": "Hey, how's your day going?",
+        "date": "2024-12-02T01:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/1.jpg",
+        "seen": true,
+        "total_message_unseen": 3
+      },
+      {
+        "id": "2",
+        "name": "Emma Johnson",
+        "message": "Did you see the latest project updates?",
+        "date": "2024-12-03T02:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/2.jpg",
+        "seen": true,
+        "total_message_unseen": 2
+      },
+      {
+        "id": "3",
+        "name": "Michael Williams",
+        "message": "Let's catch up over coffee tomorrow!",
+        "date": "2024-12-04T03:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/3.jpg",
+        "seen": true,
+        "total_message_unseen": 4
+      },
+      {
+        "id": "4",
+        "name": "Sarah Brown",
+        "message": "Thanks for your help with the presentation",
+        "date": "2024-12-05T04:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/4.jpg",
+        "seen": true,
+        "total_message_unseen": 4
+      },
+      {
+        "id": "5",
+        "name": "David Jones",
+        "message": "Meeting scheduled for 3 PM",
+        "date": "2024-12-06T05:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/5.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "6",
+        "name": "Jessica Lee",
+        "message": "Can we discuss the latest project?",
+        "date": "2024-12-07T06:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/6.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "7",
+        "name": "William Taylor",
+        "message": "Let's catch up over lunch",
+        "date": "2024-12-08T07:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/7.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "8",
+        "name": "Olivia Anderson",
+        "message": "Thanks for your help with the project",
+        "date": "2024-12-09T08:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/8.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "9",
+        "name": "James Wilson",
+        "message": "Meeting at 2 PM",
+        "date": "2024-12-10T09:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/9.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "10",
+        "name": "Ava Martinez",
+        "message": "Can we discuss the latest project?",
+        "date": "2024-12-11T10:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/10.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "11",
+        "name": "Daniel Thomas",
+        "message": "Let's catch up over lunch",
+        "date": "2024-12-12T11:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/11.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "12",
+        "name": "Sophia Garcia",
+        "message": "Thanks for your help with the project",
+        "date": "2024-12-13T12:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/12.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "13",
+        "name": "Matthew Hernandez",
+        "message": "Meeting at 2 PM",
+        "date": "2024-12-14T13:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/13.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "14",
+        "name": "Isabella Rodriguez",
+        "message": "Can we discuss the latest project?",
+        "date": "2024-12-15T14:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/14.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "15",
+        "name": "Christopher Martinez",
+        "message": "Let's catch up over lunch",
+        "date": "2024-12-16T15:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/15.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "16",
+        "name": "Amelia Perez",
+        "message": "Thanks for your help with the project",
+        "date": "2024-12-17T16:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/16.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "17",
+        "name": "Daniela Gonzalez",
+        "message": "Meeting at 2 PM",
+        "date": "2024-12-18T17:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/17.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "18",
+        "name": "Gabriel Ramirez",
+        "message": "Can we discuss the latest project?",
+        "date": "2024-12-19T18:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/18.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "19",
+        "name": "Valeria Sanchez",
+        "message": "Let's catch up over lunch",
+        "date": "2024-12-20T19:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/19.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "20",
+        "name": "Luisa Torres",
+        "message": "Thanks for your help with the project",
+        "date": "2024-12-21T20:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/20.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "21",
+        "name": "Eduardo Perez",
+        "message": "Meeting at 2 PM",
+        "date": "2024-12-22T21:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/21.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "22",
+        "name": "Mia Hernandez",
+        "message": "Can we discuss the latest project?",
+        "date": "2024-12-23T22:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/22.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "23",
+        "name": "Alejandro Sanchez",
+        "message": "Let's catch up over lunch",
+        "date": "2024-12-24T23:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/23.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "24",
+        "name": "Isabel Garcia",
+        "message": "Thanks for your help with the project",
+        "date": "2024-12-25T00:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/24.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "25",
+        "name": "David Martinez",
+        "message": "Meeting at 2 PM",
+        "date": "2024-12-26T01:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/25.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "26",
+        "name": "Olivia Rodriguez",
+        "message": "Can we discuss the latest project?",
+        "date": "2024-12-27T02:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/26.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "27",
+        "name": "Daniela Sanchez",
+        "message": "Let's catch up over lunch",
+        "date": "2024-12-28T03:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/27.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "28",
+        "name": "Gabriela Perez",
+        "message": "Thanks for your help with the project",
+        "date": "2024-12-29T04:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/28.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "29",
+        "name": "Luis Torres",
+        "message": "Meeting at 2 PM",
+        "date": "2024-12-30T05:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/29.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "30",
+        "name": "Valeria Garcia",
+        "message": "Can we discuss the latest project?",
+        "date": "2024-12-31T06:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/30.jpg",
+        "seen": true,
+        "total_message_unseen": 1
+      },
+      {
+        "id": "31",
+        "name": "Alejandro Hernandez",
+        "message": "Let's catch up over lunch",
+        "date": "2025-01-01T07:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/31.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "32",
+        "name": "Isabel Sanchez",
+        "message": "Thanks for your help with the project",
+        "date": "2025-01-02T08:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/32.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "33",
+        "name": "David Perez",
+        "message": "Meeting at 2 PM",
+        "date": "2025-01-03T09:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/33.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "34",
+        "name": "Olivia Torres",
+        "message": "Can we discuss the latest project?",
+        "date": "2025-01-04T10:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/34.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "35",
+        "name": "Daniela Garcia",
+        "message": "Let's catch up over lunch",
+        "date": "2025-01-05T11:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/35.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "36",
+        "name": "Gabriela Hernandez",
+        "message": "Thanks for your help with the project",
+        "date": "2025-01-06T12:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/36.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "37",
+        "name": "Luisa Sanchez",
+        "message": "Meeting at 2 PM",
+        "date": "2025-01-07T13:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/37.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "38",
+        "name": "Valeria Perez",
+        "message": "Can we discuss the latest project?",
+        "date": "2025-01-08T14:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/38.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "39",
+        "name": "Alejandro Garcia",
+        "message": "Let's catch up over lunch",
+        "date": "2025-01-09T15:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/39.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "40",
+        "name": "Isabel Hernandez",
+        "message": "Thanks for your help with the project",
+        "date": "2025-01-10T16:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/40.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "41",
+        "name": "David Sanchez",
+        "message": "Meeting at 2 PM",
+        "date": "2025-01-11T17:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/41.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "42",
+        "name": "Olivia Garcia",
+        "message": "Can we discuss the latest project?",
+        "date": "2025-01-12T18:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/42.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "43",
+        "name": "Daniela Perez",
+        "message": "Let's catch up over lunch",
+        "date": "2025-01-13T19:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/43.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "44",
+        "name": "Gabriela Sanchez",
+        "message": "Thanks for your help with the project",
+        "date": "2025-01-14T20:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/44.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "45",
+        "name": "Luisa Hernandez",
+        "message": "Meeting at 2 PM",
+        "date": "2025-01-15T21:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/45.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "46",
+        "name": "Valeria Garcia",
+        "message": "Can we discuss the latest project?",
+        "date": "2025-01-16T22:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/46.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "47",
+        "name": "Alejandro Perez",
+        "message": "Let's catch up over lunch",
+        "date": "2025-01-17T23:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/47.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "48",
+        "name": "Isabel Sanchez",
+        "message": "Thanks for your help with the project",
+        "date": "2025-01-18T00:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/48.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "49",
+        "name": "David Hernandez",
+        "message": "Meeting at 2 PM",
+        "date": "2025-01-19T01:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/49.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "50",
+        "name": "Olivia Perez",
+        "message": "Can we discuss the latest project?",
+        "date": "2025-01-20T02:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/50.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "51",
+        "name": "Daniela Garcia",
+        "message": "Let's catch up over lunch",
+        "date": "2025-01-21T03:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/51.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "52",
+        "name": "Gabriela Hernandez",
+        "message": "Thanks for your help with the project",
+        "date": "2025-01-22T04:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/52.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "53",
+        "name": "Luisa Sanchez",
+        "message": "Meeting at 2 PM",
+        "date": "2025-01-23T05:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/53.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "54",
+        "name": "Valeria Perez",
+        "message": "Can we discuss the latest project?",
+        "date": "2025-01-24T06:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/54.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "55",
+        "name": "Alejandro Garcia",
+        "message": "Let's catch up over lunch",
+        "date": "2025-01-25T07:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/55.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "56",
+        "name": "Isabel Hernandez",
+        "message": "Thanks for your help with the project",
+        "date": "2025-01-26T08:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/56.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "57",
+        "name": "David Sanchez",
+        "message": "Meeting at 2 PM",
+        "date": "2025-01-27T09:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/men/57.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "58",
+        "name": "Olivia Garcia",
+        "message": "Can we discuss the latest project?",
+        "date": "2025-01-28T10:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/58.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "59",
+        "name": "Daniela Perez",
+        "message": "Let's catch up over lunch",
+        "date": "2025-01-29T11:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/59.jpg",
+        "seen": false,
+        "total_message_unseen": 0
+      },
+      {
+        "id": "60",
+        "name": "Gabriela Sanchez",
+        "message": "Thanks for your help with the project",
+        "date": "2025-01-30T12:00:00.000Z",
+        "image": "https://randomuser.me/api/portraits/women/60.jpg",
+        "seen": true,
+        "total_message_unseen": 0
+      }
+    ]
+  }
+}

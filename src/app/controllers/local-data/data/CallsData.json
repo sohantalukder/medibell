@@ -1,0 +1,194 @@
+{
+  "calls/list": {
+    "payload": {
+      "page": 1,
+      "perPage": 20,
+      "needPagination": false
+    },
+    "method": "POST",
+    "success": true,
+    "message": "Got call list data",
+    "data": [
+      {
+        "id": "1",
+        "name": "Marielle Wigington",
+        "image": "https://randomuser.me/api/portraits/men/1.jpg",
+        "callType": "outgoing",
+        "duration": 65,
+        "date": "2023-12-31T20:44:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "2",
+        "name": "Chantal Shelburne",
+        "image": "https://randomuser.me/api/portraits/men/2.jpg",
+        "callType": "outgoing",
+        "duration": 72,
+        "date": "2023-12-31T20:44:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "3",
+        "name": "Darron Kulikowski",
+        "image": "https://randomuser.me/api/portraits/men/3.jpg",
+        "callType": "missed",
+        "duration": 0,
+        "date": "2023-12-31T19:09:29Z",
+        "totalMissed": 1
+      },
+      {
+        "id": "4",
+        "name": "Fredda Varnes",
+        "image": "https://randomuser.me/api/portraits/men/4.jpg",
+        "callType": "incoming",
+        "duration": 3780,
+        "date": "2023-12-31T19:09:29Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "5",
+        "name": "Lauralee Quintero",
+        "image": "https://randomuser.me/api/portraits/men/5.jpg",
+        "callType": "incoming",
+        "duration": 3840,
+        "date": "2023-12-31T19:09:29Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "6",
+        "name": "John Doe",
+        "image": "https://randomuser.me/api/portraits/men/6.jpg",
+        "callType": "outgoing",
+        "duration": 12,
+        "date": "2023-12-30T15:22:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "7",
+        "name": "Jane Smith",
+        "image": "https://randomuser.me/api/portraits/men/7.jpg",
+        "callType": "incoming",
+        "duration": 12,
+        "date": "2023-12-30T14:18:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "8",
+        "name": "Alice Johnson",
+        "image": "https://randomuser.me/api/portraits/men/8.jpg",
+        "callType": "missed",
+        "duration": 0,
+        "date": "2023-12-29T12:34:00Z",
+        "totalMissed": 1
+      },
+      {
+        "id": "9",
+        "name": "Bob Brown",
+        "image": "https://randomuser.me/api/portraits/men/9.jpg",
+        "callType": "outgoing",
+        "duration": 70,
+        "date": "2023-12-29T11:11:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "10",
+        "name": "Charlie Davis",
+        "image": "https://randomuser.me/api/portraits/men/10.jpg",
+        "callType": "incoming",
+        "duration": 89,
+        "date": "2023-12-28T10:09:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "11",
+        "name": "Eve White",
+        "image": "https://randomuser.me/api/portraits/men/11.jpg",
+        "callType": "missed",
+        "duration": 0,
+        "date": "2023-12-28T09:08:00Z",
+        "totalMissed": 6
+      },
+      {
+        "id": "12",
+        "name": "Frank Wilson",
+        "image": "https://randomuser.me/api/portraits/men/12.jpg",
+        "callType": "outgoing",
+        "duration": 12.44,
+        "date": "2023-12-27T08:07:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "13",
+        "name": "Grace Lee",
+        "image": "https://randomuser.me/api/portraits/men/13.jpg",
+        "callType": "incoming",
+        "duration": 34.12,
+        "date": "2023-12-27T07:06:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "14",
+        "name": "Hank Green",
+        "image": "https://randomuser.me/api/portraits/men/14.jpg",
+        "callType": "missed",
+        "duration": 0,
+        "date": "2023-12-26T06:05:00Z",
+        "totalMissed": 22
+      },
+      {
+        "id": "15",
+        "name": "Ivy Hall",
+        "image": "https://randomuser.me/api/portraits/men/15.jpg",
+        "callType": "outgoing",
+        "duration": 56.12,
+        "date": "2023-12-26T05:04:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "16",
+        "name": "Jack King",
+        "image": "https://randomuser.me/api/portraits/men/16.jpg",
+        "callType": "incoming",
+        "duration": 12.0,
+        "date": "2023-12-25T04:03:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "17",
+        "name": "Karen Hill",
+        "image": "https://randomuser.me/api/portraits/men/17.jpg",
+        "callType": "missed",
+        "duration": 0,
+        "date": "2023-12-25T03:02:00Z",
+        "totalMissed": 1
+      },
+      {
+        "id": "18",
+        "name": "Leo Wright",
+        "image": "https://randomuser.me/api/portraits/men/18.jpg",
+        "callType": "outgoing",
+        "duration": 78,
+        "date": "2023-12-24T02:01:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "19",
+        "name": "Mona Young",
+        "image": "https://randomuser.me/api/portraits/men/19.jpg",
+        "callType": "incoming",
+        "duration": 63,
+        "date": "2023-12-24T01:00:00Z",
+        "totalMissed": 0
+      },
+      {
+        "id": "20",
+        "name": "Nina Patel",
+        "image": "https://randomuser.me/api/portraits/men/20.jpg",
+        "callType": "missed",
+        "duration": 0,
+        "date": "2023-12-23T00:59:00Z",
+        "totalMissed": 1
+      }
+    ]
+  }
+}
