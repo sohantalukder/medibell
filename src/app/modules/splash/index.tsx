@@ -48,7 +48,6 @@ const SplashLogo: React.FC = () => {
     return () => clearTimeout(timer);
   }, [isAnimating, scale, scale2]);
 
-
   const animatedStyle2 = {
     transform: [{scale: scale2}],
   };
@@ -74,7 +73,7 @@ const SplashIndex: React.FC = () => {
   const navigation = useNavigation();
   useLayoutEffect(() => {
     setTimeout(() => {
-      navigation.navigate(screens.letsIn as never);
+      navigation.navigate(screens.selectGender as never);
     }, 3000);
   }, [navigation]);
   return (

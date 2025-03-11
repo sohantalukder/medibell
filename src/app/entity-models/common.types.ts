@@ -1,3 +1,5 @@
+import { StackNavigationOptions } from '@react-navigation/stack';
+
 /* routes */
 /* routes */
 interface RouteProps {
@@ -7,6 +9,7 @@ interface RouteProps {
   isLazy?: boolean;
   isHide: boolean;
   accessLabel: number | string;
+  options?: StackNavigationOptions
 }
 
 export type {RouteProps};
