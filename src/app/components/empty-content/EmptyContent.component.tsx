@@ -4,7 +4,6 @@ import {Colors} from '../../assets/styles/colors.style.asset';
 import {globalStyles} from '../../assets/styles/global.style.asset';
 import {typographies} from '../../assets/styles/typographies.style.asset';
 import {useTheme} from '@react-navigation/native';
-import NotFoundIllustration from '@illustrations/NotFound.illustration';
 import Loader from '@components/loader/Loader.c';
 import rs from '@styles/responsiveSize.style.asset';
 
@@ -21,7 +20,6 @@ const EmptyContent: React.FC<{
         <Loader />
       ) : (
         <View style={globalStyles.alignJustifyCenter}>
-          <NotFoundIllustration />
           {text && (
             <Text
               style={[

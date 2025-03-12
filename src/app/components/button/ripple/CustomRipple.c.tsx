@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ColorValue, StyleSheet, View} from 'react-native';
+import {ColorValue, StyleSheet, View, ViewProps} from 'react-native';
 import {State, TapGestureHandler} from 'react-native-gesture-handler';
 import Animated, {
   Easing,
@@ -11,6 +11,7 @@ import hexToRgbA from './hexaToRgba';
 import {useTheme} from '@react-navigation/native';
 import {Colors} from '@styles/colors.style.asset';
 import {RippleButtonProps} from '../types/interface';
+import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
 type ValueOf<T> = T[keyof T];
 
@@ -24,9 +25,10 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   rippleColor,
   rippleOpacity = 0.1,
   disabled,
+  haptic = false,
 }) => {
   const [radius, setRadius] = React.useState(-1);
-  const child = React.Children.only(children);
+  const child = React.Children.only(children) as React.ReactElement<ViewProps>;
   const scale = useSharedValue(0);
   const positionX = useSharedValue(0);
   const positionY = useSharedValue(0);
@@ -85,7 +87,10 @@ const RippleButton: React.FC<RippleButtonProps> = ({
           if (isFinished.value) {
             scale.value = withTiming(0, {duration: 0});
           }
-          !disabled && onPress();
+          if (!disabled) {
+            onPress();
+            haptic && ReactNativeHapticFeedback.trigger('impactLight');
+          }
         }
       }}>
       <Animated.View {...child.props} style={child.props.style}>

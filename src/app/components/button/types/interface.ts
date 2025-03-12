@@ -50,6 +50,7 @@ interface RippleButtonProps {
   rippleColor?: ColorValue;
   rippleOpacity?: number;
   disabled?: boolean;
+  haptic?: boolean;
 }
 
 export type {

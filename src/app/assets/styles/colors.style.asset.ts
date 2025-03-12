@@ -32,6 +32,7 @@ interface Colors {
   gray8: ColorValue;
   gray9: ColorValue;
   gray10: ColorValue;
+  gray11: ColorValue;
   background: ColorValue;
   success1: ColorValue;
   success2: ColorValue;
@@ -49,6 +50,7 @@ interface Colors {
   placeHolderBg: ColorValue;
   placeHolder: ColorValue;
   shadow: ColorValue;
+  whiteDark: ColorValue;
 }
 
 interface ThemeColors extends Omit<NativeTheme, 'colors'> {
@@ -67,7 +69,8 @@ const appColors: Record<ColorMode, ThemeColors> = {
       secondary: '#F4F4F4',
       badgeColor: '#E8191C',
       black: '#000000',
-      white: '#ffffff',
+      white: '#FFFFFF',
+      whiteDark: '#FFFFFF',
       default: '#FAFAFB',
       default1: '#1B1D20',
       transparent: 'transparent',
@@ -83,6 +86,7 @@ const appColors: Record<ColorMode, ThemeColors> = {
       gray8: '#E8E8E9',
       gray9: '#F4F4F4',
       gray10: '#FAFAFA',
+      gray11: '#F8F8F4',
       background: '#FAFAFB',
       success1: '#3B8756',
       success2: '#CEFDD6',
@@ -114,6 +118,7 @@ const appColors: Record<ColorMode, ThemeColors> = {
       badgeColor: '#9F1210',
       black: '#000000',
       white: '#FFFFFF',
+      whiteDark: '#000000',
       default: '#080402',
       default1: '#FAFAFB',
       transparent: 'transparent',
@@ -129,6 +134,7 @@ const appColors: Record<ColorMode, ThemeColors> = {
       gray8: '#2C2D2F',
       gray9: '#080402',
       gray10: '#1F222A',
+      gray11: '#2C2C2C',
       background: '#080402',
       success1: '#3B8756',
       success2: '#CEFDD6',
