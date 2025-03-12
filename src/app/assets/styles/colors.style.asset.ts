@@ -61,7 +61,7 @@ const appColors: Record<ColorMode, ThemeColors> = {
   light: {
     ...DefaultTheme,
     colors: {
-      primary: '#0288D1',
+      primary: '#29B6F6',
       primary1: '#29B6F6',
       primary2: '#4FC3F7',
       primary3: '#81D4FA',
@@ -109,7 +109,7 @@ const appColors: Record<ColorMode, ThemeColors> = {
   dark: {
     ...DarkTheme,
     colors: {
-      primary: '#0277BD',
+      primary: '#0288D1',
       primary1: '#0288D1',
       primary2: '#039BE5',
       primary3: '#29B6F6',

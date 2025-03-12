@@ -3,4 +3,6 @@ export enum screens {
   splash = 'splash',
   selectGender = 'select-gender',
   setupProfile = 'setup-profile',
+  pin = 'pin',
+  dashboard = 'dashboard',
 }

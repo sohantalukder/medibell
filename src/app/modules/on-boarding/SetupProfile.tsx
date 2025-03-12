@@ -1,5 +1,5 @@
 import {View, ScrollView, Text} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import SplashContainer from '@layouts/SplashContainer.layout';
 import Header from '@components/header/Header.component';
 import Button from '@components/button/button/Button.component';
@@ -16,16 +16,41 @@ import ImagePickerBottomSheet from '@packages/image-picker/ImagePicker.bottomShe
 import EditIcon from '@icons/Edit.icon';
 import {typographies} from '@styles/typographies.style.asset';
 import {Colors} from '@styles/colors.style.asset';
+import ImagePreview from '@components/image-preview/Index.component';
 const ImageUpload = () => {
+  const [image, setImage] = useState<string | null>(null);
+  const success = async (params: any) => {
+    const supportedFormat = ['jpg', 'jpeg', 'png'];
+    const res = Array.isArray(params) ? params[0] : params;
+    let ext = res.mime?.split('/')[1];
+    const isSupportedFormat = supportedFormat.indexOf(ext) > -1;
+    if (res.size / 1000000 <= 5 && isSupportedFormat) {
+      setImage(params?.path);
+    }
+  };
   return (
     <View style={{height: rs(200), width: rs(200)}}>
-      <AvatarImage />
+      {image ? (
+        <ImagePreview
+          source={{uri: image}}
+          styles={[globalStyles.widthFull, globalStyles.heightFull]}
+          borderRadius={rs(500)}
+        />
+      ) : (
+        <AvatarImage />
+      )}
       <RippleButton
         borderRadius={rs(10)}
         onPress={() =>
           global.showBottomSheet({
             flag: true,
             component: ImagePickerBottomSheet,
+            componentProps: {
+              success,
+              failed: () => {
+                setImage(null);
+              },
+            },
           })
         }>
         <View style={{position: `${'absolute'}`, bottom: rs(0), right: rs(15)}}>
@@ -75,7 +100,7 @@ const SetupProfile = () => {
       </ScrollView>
       <Button
         wrapStyle={{...customMargin(10, 20, 30, 20), width: undefined}}
-        onPress={() => navigation.navigate(screens.selectGender as never)}
+        onPress={() => navigation.navigate(screens.pin as never)}
         text="Save"
       />
     </SplashContainer>

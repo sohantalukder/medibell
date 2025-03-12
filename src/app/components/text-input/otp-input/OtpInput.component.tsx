@@ -65,36 +65,6 @@ const OTPInput: React.FC<OTPInputProps> = ({length = 6, callback, style}) => {
     inputRefs.current[index]?.setNativeProps({text: value});
   }, []);
 
-  const handlePaste = useCallback(
-    (text: string, currentIndex: number) => {
-      // Clean the pasted text to only include numbers
-      const cleanText = text.replace(/[^0-9]/g, '');
-
-      // Handle each character of the pasted text
-      for (
-        let i = 0;
-        i < Math.min(cleanText.length, length - currentIndex);
-        i++
-      ) {
-        const targetIndex = currentIndex + i;
-        setInputValue(targetIndex, cleanText[i]);
-      }
-
-      // Focus the next empty input or the last input
-      const nextFocusIndex = Math.min(
-        currentIndex + cleanText.length,
-        length - 1,
-      );
-      inputRefs.current[nextFocusIndex]?.focus();
-
-      // Check if OTP is complete after a short delay to ensure all values are set
-      if (currentIndex + cleanText.length >= length) {
-        setTimeout(handleFillUp, 50);
-      }
-    },
-    [length, handleFillUp, setInputValue],
-  );
-
   const handleBackspace = useCallback(
     (index: number) => {
       // If current input is empty and not the first input, move to previous
@@ -136,7 +106,8 @@ const OTPInput: React.FC<OTPInputProps> = ({length = 6, callback, style}) => {
           maxLength={index === length - 1 ? 1 : undefined}
           inputMode="numeric"
           keyboardType="number-pad"
-          placeholder="0"
+          placeholder=""
+          secureTextEntry
           autoComplete="one-time-code"
           placeholderTextColor={colors.gray7}
           selectionColor={colors.primary}
@@ -152,18 +123,13 @@ const OTPInput: React.FC<OTPInputProps> = ({length = 6, callback, style}) => {
               return;
             }
 
-            // Check if this might be a paste operation
-            if (text.length > 1) {
-              handlePaste(text, index);
-            } else {
-              // Handle single digit input
-              setInputValue(index, text);
-              if (text && index < length - 1) {
-                inputRefs.current[index + 1]?.focus();
-              }
-              if (index === length - 1 && text) {
-                handleFillUp();
-              }
+            // Handle single digit input
+            setInputValue(index, text);
+            if (text && index < length - 1) {
+              inputRefs.current[index + 1]?.focus();
+            }
+            if (index === length - 1 && text) {
+              handleFillUp();
             }
           }}
         />
@@ -175,7 +141,6 @@ const OTPInput: React.FC<OTPInputProps> = ({length = 6, callback, style}) => {
       handleOnFocus,
       handleOnBlur,
       handleKeyPress,
-      handlePaste,
       handleBackspace,
       length,
       setInputValue,
