@@ -2,13 +2,17 @@ import hexToRgbA from '@components/button/ripple/hexaToRgba';
 import {
   DarkTheme,
   DefaultTheme,
-  Theme,
+  Theme as NativeTheme,
 } from '@react-navigation/native';
 import {ColorValue} from 'react-native';
 
 type ColorMode = 'light' | 'dark';
 interface Colors {
   primary: ColorValue;
+  primary1: ColorValue;
+  primary2: ColorValue;
+  primary3: ColorValue;
+  primary4: ColorValue;
   secondary: ColorValue;
   badgeColor: ColorValue;
   black: ColorValue;
@@ -47,29 +51,19 @@ interface Colors {
   shadow: ColorValue;
 }
 
-interface ThemeColors extends Omit<Theme, 'colors'> {
+interface ThemeColors extends Omit<NativeTheme, 'colors'> {
   colors: Colors;
 }
 
-const navigationTheme = (colors: Colors, isDark: boolean): Theme => ({
-  dark: isDark,
-  colors: {
-    ...isDark ? DarkTheme.colors : DefaultTheme.colors,
-    primary: colors.primary as string,
-    background: colors.background as string,
-    card: colors.card as string,
-    text: colors.text as string,
-    border: colors.border as string,
-    notification: colors.notification as string,
-  },
-  fonts: DefaultTheme.fonts
-});
-
-const appColors: Record<ColorMode, ThemeColors> & { getNavigationTheme: (mode: ColorMode) => Theme } = {
+const appColors: Record<ColorMode, ThemeColors> = {
   light: {
     ...DefaultTheme,
     colors: {
-      primary: '#006DF5',
+      primary: '#0288D1',
+      primary1: '#29B6F6',
+      primary2: '#4FC3F7',
+      primary3: '#81D4FA',
+      primary4: '#B3E5FC',
       secondary: '#F4F4F4',
       badgeColor: '#E8191C',
       black: '#000000',
@@ -111,7 +105,11 @@ const appColors: Record<ColorMode, ThemeColors> & { getNavigationTheme: (mode: C
   dark: {
     ...DarkTheme,
     colors: {
-      primary: '#006DF5',
+      primary: '#0277BD',
+      primary1: '#0288D1',
+      primary2: '#039BE5',
+      primary3: '#29B6F6',
+      primary4: '#4FC3F7',
       secondary: '#2C2C2C',
       badgeColor: '#9F1210',
       black: '#000000',
@@ -150,7 +148,6 @@ const appColors: Record<ColorMode, ThemeColors> & { getNavigationTheme: (mode: C
       shadow: '#B0B1B2',
     },
   },
-  getNavigationTheme: (mode: ColorMode) => navigationTheme(appColors[mode].colors, mode === 'dark'),
 };
 
 export type {ColorMode, Colors};

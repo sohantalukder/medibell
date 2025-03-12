@@ -13,9 +13,9 @@ const LeftArrowIcon: React.FC<IconProps> = ({
   return (
     <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
       <Path
-        d="M4.958 14.32h17.5M12.017 21.348L4.958 14.32l7.059-7.029"
+        d="M15.5 19l-7-7 7-7"
         stroke={fill || colors.default1}
-        strokeWidth={2}
+        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

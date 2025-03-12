@@ -46,7 +46,7 @@ const Header: React.FC<_props> = ({
     <View
       style={[
         globalStyles.rowBetween,
-        {...customPadding(0, 18, 0, 18)},
+        {...customPadding(0, 18, 0, 5)},
         globalStyles.widthFull,
         style,
       ]}>

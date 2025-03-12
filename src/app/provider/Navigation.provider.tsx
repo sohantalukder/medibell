@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, Theme} from '@react-navigation/native';
 import {useColorScheme} from 'react-native';
 import appColors from '@styles/colors.style.asset';
 import BottomSheetIndex from '@components/bottom-sheet';
@@ -11,9 +11,9 @@ interface Props {
 
 const NavigationProvider: React.FC<Props> = ({children}) => {
   const colorScheme = useColorScheme();
-  const theme = appColors.getNavigationTheme(colorScheme === 'dark' ? 'dark' : 'light');
+  const theme = appColors[colorScheme === 'dark' ? 'dark' : 'light'];
   return (
-    <NavigationContainer theme={theme}>
+    <NavigationContainer theme={theme as Theme}>
       {children}
       <BottomSheetIndex />
       <DropdownMenu />
