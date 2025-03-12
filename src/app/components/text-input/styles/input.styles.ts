@@ -16,9 +16,11 @@ export const inputStyles = ({
       gap: 12,
       borderRadius: 16,
       borderWidth: 1,
-      borderColor: colors.transparent,
+      borderColor: colors.gray8,
       backgroundColor:
-        mode === 'dark' ? hexOpacityToColor(colors.gray10, 0.8) : colors.gray8,
+        mode === 'dark'
+          ? hexOpacityToColor(colors.gray10, 0.8)
+          : colors.transparent,
       ...customPadding(0, 20, 0, 20),
       flexDirection: 'row',
       alignItems: 'center',
@@ -29,14 +31,16 @@ export const inputStyles = ({
       gap: 12,
       borderRadius: 16,
       borderWidth: 1,
-      borderColor: colors.transparent,
+      borderColor: colors.gray8,
       backgroundColor:
-        mode === 'dark' ? hexOpacityToColor(colors.gray10, 0.8) : colors.gray8,
+        mode === 'dark'
+          ? hexOpacityToColor(colors.gray10, 0.8)
+          : colors.transparent,
       ...customPadding(0, 5, 0, 5),
       flexDirection: 'row',
     },
     activeContainer: {
-      borderColor: colors.primary,
+      borderColor: hexOpacityToColor(colors.primary, 0.5),
       backgroundColor: hexOpacityToColor(colors.primary, 0.1),
     },
     errorContainer: {

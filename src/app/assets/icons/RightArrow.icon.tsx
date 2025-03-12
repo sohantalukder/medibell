@@ -13,12 +13,11 @@ const RightArrowIcon: React.FC<IconProps> = ({
   return (
     <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
       <Path
-        fill="none"
+        d="M8.5 5l7 7-7 7"
         stroke={fill || colors.default1}
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M10 17l5-5m0 0l-5-5"
       />
     </Svg>
   );

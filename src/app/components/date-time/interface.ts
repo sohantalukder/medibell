@@ -5,6 +5,7 @@ interface _dateTime {
   mode?: 'date' | 'time';
   onChange?: (event: DateTimePickerEvent, date?: Date) => void;
   minimumDate?: Date;
+  maximumDate?: Date;
 }
 interface _dateTimeInputProps {
   label?: string;

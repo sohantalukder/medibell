@@ -58,6 +58,9 @@ const RippleButton: React.FC<RippleButtonProps> = ({
     <TapGestureHandler
       maxDurationMs={9999999999}
       onHandlerStateChange={event => {
+        if (disabled) {
+          return;
+        }
         state.value = event.nativeEvent.state;
         positionX.value = event.nativeEvent.x;
         positionY.value = event.nativeEvent.y;

@@ -10,17 +10,19 @@ const CustomPicker: React.FC<_dateTime> = ({
   mode = 'date',
   onChange = () => {},
   minimumDate,
+  maximumDate,
 }) => {
   const colors = useTheme().colors as Colors;
   const theme = useColorScheme() || 'light';
   return (
     <RNDateTimePicker
-      value={value}
+      value={value ? value : new Date()}
       mode={mode}
       onChange={onChange}
       themeVariant={theme}
       accentColor={colors.primary as string}
       minimumDate={minimumDate}
+      maximumDate={maximumDate}
     />
   );
 };

@@ -6,6 +6,8 @@ import {
   ViewStyle,
   StyleProp,
   TextStyle,
+  useColorScheme,
+  ColorSchemeName,
 } from 'react-native';
 import React, {useState} from 'react';
 import {DateTimePickerEvent} from '@react-native-community/datetimepicker';
@@ -33,11 +35,12 @@ interface dateInputProps {
   leftIcon?: React.ReactElement;
   icon?: React.ReactElement;
   minimumDate?: Date;
+  maximumDate?: Date;
 }
 const DateInput: React.FC<dateInputProps> = ({
   label,
   placeholder = 'Select Date',
-  defaultValue = new Date(),
+  defaultValue,
   onChange,
   style,
   name,
@@ -46,18 +49,21 @@ const DateInput: React.FC<dateInputProps> = ({
   labelStyle,
   icon,
   minimumDate,
+  maximumDate,
 }) => {
   const colors = useTheme().colors as Colors;
-  const [date, setDate] = useState<Date>(new Date(defaultValue));
+  const [date, setDate] = useState<Date | null>(defaultValue || null);
   const [show, setShow] = useState<boolean>(false);
   const dateChange = (event: DateTimePickerEvent, newDate?: Date) => {
     setShow(false);
     newDate && setDate(newDate);
-    onChange && onChange(newDate || date, name ? name?.trim() : '');
+    onChange &&
+      onChange(newDate || date || new Date(), name ? name?.trim() : '');
   };
   const handleOpenModal = () => {
     setShow(true);
   };
+  const mode = useColorScheme();
   return (
     <>
       <View style={style}>
@@ -80,7 +86,9 @@ const DateInput: React.FC<dateInputProps> = ({
           activeOpacity={0.6}
           style={[
             styles(colors).container,
-            show && inputStyles({colors}).activeContainer,
+            show &&
+              inputStyles({colors, mode: mode as ColorSchemeName})
+                .activeContainer,
             containerStyle,
           ]}>
           <View style={[globalStyles.flexRow]}>
@@ -94,7 +102,7 @@ const DateInput: React.FC<dateInputProps> = ({
                 },
               ]}
               numberOfLines={1}>
-              {dayjs(date).format('DD-MM-YYYY') || placeholder}
+              {date ? dayjs(date).format('DD-MM-YYYY') : placeholder}
             </Text>
           </View>
           <CalenderIcon />
@@ -104,7 +112,8 @@ const DateInput: React.FC<dateInputProps> = ({
         <CustomPicker
           minimumDate={minimumDate}
           onChange={dateChange}
-          value={date}
+          maximumDate={maximumDate}
+          value={date || new Date()}
           mode={'date'}
         />
       )}

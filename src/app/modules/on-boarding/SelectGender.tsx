@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import Container from '@layouts/Container.layout';
-import {useTheme} from '@react-navigation/native';
+import {useNavigation, useTheme} from '@react-navigation/native';
 import {Colors} from '@styles/colors.style.asset';
 import {typographies} from '@styles/typographies.style.asset';
 import ManIcon from '@icons/Man.icon';
@@ -16,6 +16,7 @@ import {
 import IconButton from '@components/button/icon-button/IconButton.component';
 import RightArrowIcon from '@icons/RightArrow.icon';
 import EachGender from './components/EachGender';
+import {screens} from '@routes/routeName.routes';
 export interface Gender {
   id: number;
   label: string;
@@ -29,6 +30,7 @@ const SelectGender = () => {
     {id: 3, label: 'Other', icon: OthersIcon},
   ];
   const [select, setSelect] = useState<number>(0);
+  const navigation = useNavigation();
   return (
     <Container
       containerStyle={[{...customPadding(20, 20, 20, 20)}, globalStyles.flex1]}>
@@ -57,6 +59,7 @@ const SelectGender = () => {
           disabled={!select}
           icon={<RightArrowIcon fill={colors.white} />}
           bgColor={colors.primary}
+          onPress={() => navigation.navigate(screens.setupProfile as never)}
         />
       </View>
     </Container>
