@@ -47,6 +47,16 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs access to your camera for uploading image.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs access to your photo libary for uploading image.</string>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>$(PRODUCT_NAME) sends timely reminders to help you manage your medications effectively.</string>
+	
+
 	<key>UIAppFonts</key>
 	<array>
 		<string>Urbanist-Bold.ttf</string>
