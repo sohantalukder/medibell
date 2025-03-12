@@ -4,7 +4,7 @@ import {IconProps} from '@entity-models/iconProps.types';
 import {useTheme} from '@react-navigation/native';
 import {Colors} from '@styles/colors.style.asset';
 
-const LeftArrowIcon: React.FC<IconProps> = ({
+const RightArrowIcon: React.FC<IconProps> = ({
   width = 24,
   height = 24,
   fill,
@@ -18,9 +18,9 @@ const LeftArrowIcon: React.FC<IconProps> = ({
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M14 7l-5 5 5 5"
+        d="M10 17l5-5m0 0l-5-5"
       />
     </Svg>
   );
 };
-export default LeftArrowIcon;
+export default RightArrowIcon;

@@ -2,7 +2,7 @@ import {screens} from '@routes/routeName.routes';
 import {RouteProps} from '@entity-models/common.types';
 import SplashIndex from '@modules/splash';
 import SelectGender from '@modules/on-boarding/SelectGender';
-import SelectAge from '@modules/on-boarding/SelectAge';
+import SetupProfile from '@modules/on-boarding/SetupProfile';
 
 const basicRoutes: Array<RouteProps> = [
   {
@@ -19,9 +19,9 @@ const basicRoutes: Array<RouteProps> = [
   },
   {
     accessLabel: 0,
-    component: SelectAge,
+    component: SetupProfile,
     isHide: false,
-    name: screens.selectAge,
+    name: screens.setupProfile,
   },
 ];
 

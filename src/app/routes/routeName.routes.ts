@@ -2,5 +2,5 @@ export enum screens {
   /* basic */
   splash = 'splash',
   selectGender = 'select-gender',
-  selectAge = 'select-age',
+  setupProfile = 'setup-profile',
 }
