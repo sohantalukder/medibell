@@ -1,16 +1,15 @@
 import {statusBar} from '../assets/styles/properties.asset';
-// import {customTheme} from '../assets/styles/colors.style.asset';
-import {StyleProp, ViewStyle} from 'react-native';
+import {ColorValue, StyleProp, ViewStyle} from 'react-native';
 
 interface ContainerProps {
   children: React.CElement;
   containerStyle?: StyleProp<ViewStyle>;
-  bg?: colors;
+  bg?: ColorValue;
   showActivity?: boolean;
   showHeader?: boolean;
   statusBarStyle?: statusBar;
-  statusBarBg?: colors;
-  activityBgColor?: colors;
+  statusBarBg?: ColorValue;
+  activityBgColor?: ColorValue;
   ph?: number;
 }
 

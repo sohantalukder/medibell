@@ -1,16 +1,12 @@
 import React from 'react';
-import Svg, {
-  ClipPath,
-  Defs,
-  G,
-  LinearGradient,
-  Path,
-  Stop,
-} from 'react-native-svg';
+import Svg, {Defs, G, LinearGradient, Path, Stop} from 'react-native-svg';
 import rs from '../styles/responsiveSize.style.asset';
 import {IconProps} from '@entity-models/iconProps.types';
-
+import {Colors} from '@styles/colors.style.asset';
+import {useTheme} from '@react-navigation/native';
+import hexOpacityToColor from '@helper/utilities/hexOpacityToColor';
 const LoaderIcon: React.FC<IconProps> = ({width = rs(60), height = rs(60)}) => {
+  const colors = useTheme().colors as Colors;
   return (
     <Svg width={width} height={height} viewBox="0 0 60 60" fill="none">
       <G clipPath="url(#clip0_1127_18234)">
@@ -29,12 +25,9 @@ const LoaderIcon: React.FC<IconProps> = ({width = rs(60), height = rs(60)}) => {
           x2={-11.3946}
           y2={39.2998}
           gradientUnits="userSpaceOnUse">
-          <Stop stopColor="#006DF5" />
-          <Stop offset={1} stopColor="#336fc4" />
+          <Stop stopColor={colors.primary} />
+          <Stop offset={1} stopColor={hexOpacityToColor(colors.primary, 0.7)} />
         </LinearGradient>
-        <ClipPath id="clip0_1127_18234">
-          <Path fill="#fff" d="M0 0H60V60H0z" />
-        </ClipPath>
       </Defs>
     </Svg>
   );

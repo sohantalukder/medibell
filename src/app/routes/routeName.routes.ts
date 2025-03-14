@@ -5,4 +5,5 @@ export enum screens {
   setupProfile = 'setup-profile',
   pin = 'pin',
   dashboard = 'dashboard',
+  notification = 'notification',
 }

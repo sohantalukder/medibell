@@ -17,6 +17,8 @@ import EditIcon from '@icons/Edit.icon';
 import {typographies} from '@styles/typographies.style.asset';
 import {Colors} from '@styles/colors.style.asset';
 import ImagePreview from '@components/image-preview/Index.component';
+import Animated, {FadeInDown} from 'react-native-reanimated';
+
 const ImageUpload = () => {
   const [image, setImage] = useState<string | null>(null);
   const success = async (params: any) => {
@@ -68,7 +70,11 @@ const SetupProfile = () => {
       <Header
         text="Setup Your Profile"
         rightComponent={
-          <Text style={[typographies(colors).bodyLargeSemibold]}>Skip</Text>
+          <Text
+            style={[typographies(colors).bodyLargeSemibold]}
+            onPress={() => navigation.navigate(screens.dashboard as never)}>
+            Skip
+          </Text>
         }
       />
       <ScrollView
@@ -77,8 +83,11 @@ const SetupProfile = () => {
           globalStyles.alignCenter,
           {...customMargin(30, 20, 0, 20)},
         ]}>
-        <ImageUpload />
-        <View
+        <Animated.View entering={FadeInDown.delay(100).springify().damping(10)}>
+          <ImageUpload />
+        </Animated.View>
+        <Animated.View
+          entering={FadeInDown.delay(150).springify().damping(10)}
           style={[globalStyles.widthFull, {marginTop: rs(35), gap: rs(16)}]}>
           <CustomInput
             onChangeText={() => {}}
@@ -96,7 +105,7 @@ const SetupProfile = () => {
             maximumDate={new Date()}
           />
           <MultiTextInput placeholder="About ..." />
-        </View>
+        </Animated.View>
       </ScrollView>
       <Button
         wrapStyle={{...customMargin(10, 20, 30, 20), width: undefined}}

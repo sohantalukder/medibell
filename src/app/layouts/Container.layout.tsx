@@ -21,7 +21,7 @@ const Container: React.FC<ContainerProps> = ({
   return (
     <View style={globalStyles.flex1}>
       <CustomStatusBar
-        bgColor={statusBarBg || colors.default}
+        bgColor={statusBarBg || colors.background}
         showHeader={showHeader}
         barStyle={
           statusBarStyle || colorScheme === 'dark'

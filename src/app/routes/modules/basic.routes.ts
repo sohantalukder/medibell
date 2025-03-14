@@ -4,6 +4,8 @@ import SplashIndex from '@modules/splash';
 import SelectGender from '@modules/on-boarding/SelectGender';
 import SetupProfile from '@modules/on-boarding/SetupProfile';
 import Pin from '@modules/pin';
+import Dashboard from '@modules/dashboard';
+import Notification from '@modules/notification';
 
 const basicRoutes: Array<RouteProps> = [
   {
@@ -29,6 +31,21 @@ const basicRoutes: Array<RouteProps> = [
     component: Pin,
     isHide: false,
     name: screens.pin,
+  },
+  {
+    accessLabel: 0,
+    component: Dashboard,
+    isHide: false,
+    name: screens.dashboard,
+  },
+  {
+    accessLabel: 0,
+    component: Notification,
+    isHide: false,
+    name: screens.notification,
+    options: {
+      presentation: 'modal',
+    },
   },
 ];
 

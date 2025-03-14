@@ -61,8 +61,8 @@ const appColors: Record<ColorMode, ThemeColors> = {
   light: {
     ...DefaultTheme,
     colors: {
-      primary: '#29B6F6',
-      primary1: '#29B6F6',
+      primary: '#5D54FF',
+      primary1: '#016348',
       primary2: '#4FC3F7',
       primary3: '#81D4FA',
       primary4: '#B3E5FC',
@@ -87,7 +87,7 @@ const appColors: Record<ColorMode, ThemeColors> = {
       gray9: '#F4F4F4',
       gray10: '#FAFAFA',
       gray11: '#F8F8F4',
-      background: '#FAFAFB',
+      background: '#F5F5F5',
       success1: '#3B8756',
       success2: '#CEFDD6',
       success3: '#F7FFF5',
@@ -109,8 +109,8 @@ const appColors: Record<ColorMode, ThemeColors> = {
   dark: {
     ...DarkTheme,
     colors: {
-      primary: '#0288D1',
-      primary1: '#0288D1',
+      primary: '#5D54FF',
+      primary1: '#016348',
       primary2: '#039BE5',
       primary3: '#29B6F6',
       primary4: '#4FC3F7',
@@ -135,7 +135,7 @@ const appColors: Record<ColorMode, ThemeColors> = {
       gray9: '#080402',
       gray10: '#1F222A',
       gray11: '#2C2C2C',
-      background: '#080402',
+      background: '#100F0F',
       success1: '#3B8756',
       success2: '#CEFDD6',
       success3: '#F7FFF5',

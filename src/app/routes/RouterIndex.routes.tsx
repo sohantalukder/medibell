@@ -8,7 +8,12 @@ const Stack = createStackNavigator();
 
 const renderRoutes = (routes: RouteProps[]) => {
   return routes.map((route: RouteProps, index: number) => (
-    <Stack.Screen name={route.name} component={route.component} key={index} />
+    <Stack.Screen
+      name={route.name}
+      component={route.component}
+      key={index}
+      options={route.options}
+    />
   ));
 };
 

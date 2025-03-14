@@ -36,7 +36,7 @@ const SelectGender = () => {
       containerStyle={[{...customPadding(20, 20, 20, 20)}, globalStyles.flex1]}>
       <Text
         style={[typographies(colors).bodyLargeSemibold, styles.skipText]}
-        onPress={() => console.log('object')}>
+        onPress={() => navigation.navigate(screens.dashboard as never)}>
         Skip
       </Text>
       <Text

@@ -13,6 +13,7 @@ import rs from '@styles/responsiveSize.style.asset';
 import {typographies} from '@styles/typographies.style.asset';
 import {useTheme} from '@react-navigation/native';
 import {Colors} from '@styles/colors.style.asset';
+import Animated, {FadeInDown} from 'react-native-reanimated';
 import hexOpacityToColor from '@helper/utilities/hexOpacityToColor';
 
 interface OTPInputProps {
@@ -99,40 +100,45 @@ const OTPInput: React.FC<OTPInputProps> = ({length = 6, callback, style}) => {
   const renderInputs = useMemo(
     () =>
       Array.from({length}).map((_, index) => (
-        <TextInput
+        <Animated.View
           key={index}
-          ref={el => (inputRefs.current[index] = el)}
-          style={componentStyles.input}
-          maxLength={index === length - 1 ? 1 : undefined}
-          inputMode="numeric"
-          keyboardType="number-pad"
-          placeholder=""
-          secureTextEntry
-          autoComplete="one-time-code"
-          placeholderTextColor={colors.gray7}
-          selectionColor={colors.primary}
-          selectTextOnFocus
-          onFocus={() => handleOnFocus(index)}
-          onBlur={() => handleOnBlur(index)}
-          textAlignVertical="center"
-          onKeyPress={e => handleKeyPress(e, index)}
-          onChangeText={text => {
-            // Handle backspace through text change
-            if (text === '') {
-              handleBackspace(index);
-              return;
-            }
+          entering={FadeInDown.delay(index * 100)
+            .springify()
+            .damping(10)}>
+          <TextInput
+            ref={el => (inputRefs.current[index] = el)}
+            style={componentStyles.input}
+            maxLength={index === length - 1 ? 1 : undefined}
+            inputMode="numeric"
+            keyboardType="number-pad"
+            placeholder=""
+            secureTextEntry
+            autoComplete="one-time-code"
+            placeholderTextColor={colors.gray7}
+            selectionColor={colors.primary}
+            selectTextOnFocus
+            onFocus={() => handleOnFocus(index)}
+            onBlur={() => handleOnBlur(index)}
+            textAlignVertical="center"
+            onKeyPress={e => handleKeyPress(e, index)}
+            onChangeText={text => {
+              // Handle backspace through text change
+              if (text === '') {
+                handleBackspace(index);
+                return;
+              }
 
-            // Handle single digit input
-            setInputValue(index, text);
-            if (text && index < length - 1) {
-              inputRefs.current[index + 1]?.focus();
-            }
-            if (index === length - 1 && text) {
-              handleFillUp();
-            }
-          }}
-        />
+              // Handle single digit input
+              setInputValue(index, text);
+              if (text && index < length - 1) {
+                inputRefs.current[index + 1]?.focus();
+              }
+              if (index === length - 1 && text) {
+                handleFillUp();
+              }
+            }}
+          />
+        </Animated.View>
       )),
     [
       colors.gray7,
