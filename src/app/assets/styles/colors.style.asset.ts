@@ -9,11 +9,14 @@ import {ColorValue} from 'react-native';
 type ColorMode = 'light' | 'dark';
 interface Colors {
   primary: ColorValue;
-  primary1: ColorValue;
-  primary2: ColorValue;
-  primary3: ColorValue;
-  primary4: ColorValue;
   secondary: ColorValue;
+  secondary1: ColorValue;
+  tertiary: ColorValue;
+  tertiary1: ColorValue;
+  quaternary: ColorValue;
+  quaternary1: ColorValue;
+  quinary: ColorValue;
+  quinary1: ColorValue;
   badgeColor: ColorValue;
   black: ColorValue;
   white: ColorValue;
@@ -62,11 +65,14 @@ const appColors: Record<ColorMode, ThemeColors> = {
     ...DefaultTheme,
     colors: {
       primary: '#5D54FF',
-      primary1: '#016348',
-      primary2: '#4FC3F7',
-      primary3: '#81D4FA',
-      primary4: '#B3E5FC',
-      secondary: '#F4F4F4',
+      secondary: '#606EF0',
+      secondary1: '#394290',
+      tertiary: '#F77F00',
+      tertiary1: '#944C00',
+      quaternary: '#7B2CBF',
+      quaternary1: '#5A189A',
+      quinary: '#BA181B',
+      quinary1: '#A4161A',
       badgeColor: '#E8191C',
       black: '#000000',
       white: '#FFFFFF',
@@ -110,11 +116,14 @@ const appColors: Record<ColorMode, ThemeColors> = {
     ...DarkTheme,
     colors: {
       primary: '#5D54FF',
-      primary1: '#016348',
-      primary2: '#039BE5',
-      primary3: '#29B6F6',
-      primary4: '#4FC3F7',
-      secondary: '#2C2C2C',
+      secondary: '#606EF0',
+      secondary1: '#394290',
+      tertiary: '#F77F00',
+      tertiary1: '#944C00',
+      quaternary: '#7B2CBF',
+      quaternary1: '#5A189A',
+      quinary: '#BA181B',
+      quinary1: '#A4161A',
       badgeColor: '#9F1210',
       black: '#000000',
       white: '#FFFFFF',

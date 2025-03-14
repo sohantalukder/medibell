@@ -95,7 +95,7 @@ const buttonStyles = (
       color: colors.white,
     },
     secondary: {
-      backgroundColor: colors.secondary,
+      backgroundColor: colors.default,
       color: colors.gray0,
     },
     disable: {

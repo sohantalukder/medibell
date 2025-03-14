@@ -26,6 +26,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
   rippleOpacity = 0.1,
   disabled,
   haptic = false,
+  style,
 }) => {
   const [radius, setRadius] = React.useState(-1);
   const child = React.Children.only(children) as React.ReactElement<ViewProps>;
@@ -96,7 +97,7 @@ const RippleButton: React.FC<RippleButtonProps> = ({
           }
         }
       }}>
-      <Animated.View {...child.props} style={child.props.style}>
+      <Animated.View {...child.props} style={[child.props.style, style]}>
         <View
           style={styles.container}
           onLayout={({
