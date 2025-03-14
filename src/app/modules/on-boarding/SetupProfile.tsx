@@ -72,7 +72,7 @@ const SetupProfile = () => {
         rightComponent={
           <Text
             style={[typographies(colors).bodyLargeSemibold]}
-            onPress={() => navigation.navigate(screens.dashboard as never)}>
+            onPress={() => navigation.navigate(screens.home as never)}>
             Skip
           </Text>
         }

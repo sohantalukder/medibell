@@ -135,7 +135,7 @@ const appColors: Record<ColorMode, ThemeColors> = {
       gray9: '#080402',
       gray10: '#1F222A',
       gray11: '#2C2C2C',
-      background: '#100F0F',
+      background: '#090909',
       success1: '#3B8756',
       success2: '#CEFDD6',
       success3: '#F7FFF5',

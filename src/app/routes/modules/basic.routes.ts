@@ -4,8 +4,8 @@ import SplashIndex from '@modules/splash';
 import SelectGender from '@modules/on-boarding/SelectGender';
 import SetupProfile from '@modules/on-boarding/SetupProfile';
 import Pin from '@modules/pin';
-import Dashboard from '@modules/dashboard';
 import Notification from '@modules/notification';
+import HomeIndex from '@modules/splash/HomeIndex';
 
 const basicRoutes: Array<RouteProps> = [
   {
@@ -34,9 +34,9 @@ const basicRoutes: Array<RouteProps> = [
   },
   {
     accessLabel: 0,
-    component: Dashboard,
+    component: HomeIndex,
     isHide: false,
-    name: screens.dashboard,
+    name: screens.home,
   },
   {
     accessLabel: 0,

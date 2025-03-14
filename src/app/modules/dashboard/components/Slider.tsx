@@ -39,7 +39,7 @@ const Slider = () => {
   }).current;
 
   return (
-    <View style={{...customMargin(20, 20, 20, 20)}}>
+    <View style={{...customMargin(5, 20, 20, 20)}}>
       <Text style={[typographies(colors).heading6, {marginBottom: rs(16)}]}>
         Medicine for Morning
       </Text>

@@ -6,4 +6,8 @@ export enum screens {
   pin = 'pin',
   dashboard = 'dashboard',
   notification = 'notification',
+  addMedicine = 'add-medicine',
+  profile = 'profile',
+  analytics = 'analytics',
+  home = 'home',
 }

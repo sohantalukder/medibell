@@ -6,7 +6,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTheme} from '@react-navigation/native';
 import {Colors} from '@styles/colors.style.asset';
 import {BottomTabInterface} from './interface';
-import {typographies} from '@styles/typographies.style.asset';
 import hexToRgbA from '@components/button/ripple/hexaToRgba';
 
 interface BottomTabProps {
@@ -24,23 +23,17 @@ const BottomTab: React.FC<BottomTabProps> = ({tabLists}) => {
       backBehavior="initialRoute"
       screenOptions={{
         headerShown: false,
-        tabBarShowLabel: true,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          borderTopColor: hexToRgbA(colors.gray8, 0.7),
+          borderTopColor: hexToRgbA(colors.gray8, 0.3),
           borderTopWidth: 1,
           alignItems: 'center',
           ...customPadding(10, 20, 20, 20),
-          height: rs(90),
-          backgroundColor: colors.default,
+          height: rs(80),
+          backgroundColor: colors.background,
         },
+        tabBarShowLabel: false,
         animation: 'fade',
-        tabBarLabelStyle: {
-          ...typographies(colors).bodyLargeSemibold,
-          color: colors.default1,
-          marginTop: rs(4),
-          textTransform: 'capitalize',
-        },
       }}>
       {tabLists.map((item, index) => (
         <Tab.Screen
@@ -53,6 +46,7 @@ const BottomTab: React.FC<BottomTabProps> = ({tabLists}) => {
               <BottomTabBarIcon
                 name={item.name}
                 Icon={item.Icon}
+                FillIcon={item.FillIcon}
                 focused={focused}
               />
             ),

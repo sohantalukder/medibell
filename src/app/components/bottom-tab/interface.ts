@@ -6,6 +6,7 @@ interface BottomTabInterface {
   route: screens;
   name: string;
   Component: React.FC;
+  FillIcon: React.FC<IconProps>;
 }
 
 export type {BottomTabInterface};
