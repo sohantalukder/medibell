@@ -2,34 +2,27 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Animated, Pressable, StyleSheet} from 'react-native';
 import {nativeDriver} from '../../assets/styles/properties.asset';
-import {customTheme} from '../../assets/styles/colors.style.asset';
-import rs from '../../assets/styles/responsiveSize.style.asset';
-interface _customSwitch {
+import {useTheme} from '@react-navigation/native';
+import {Colors} from '@styles/colors.style.asset';
+
+const CustomSwitch: React.FC<{
   value?: boolean;
-  onPress?: (params1: boolean, params2: string) => void;
+  onPress?: () => void;
   activeColor?: string;
-  name?: string;
-  bgColor?: string;
-}
-const CustomSwitch: React.FC<_customSwitch> = ({
-  value = false,
-  activeColor = customTheme.colors.primary,
-  onPress = () => {},
-  name,
-  bgColor = customTheme.colors.transparent,
-}) => {
+}> = ({value = false, activeColor = '', onPress = () => {}}) => {
+  const colors = useTheme().colors as Colors;
   const valueRef = useRef(false);
-  const [show, setShow] = useState<boolean>(value);
+  const [isActive, setIsActive] = useState(false || value);
   const translateRef = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
+    setIsActive(value);
     value ? handleSwitch(true) : handleSwitch(false);
-    setShow(value);
   }, [value]);
 
   const handleSwitch = (flag = false) => {
     Animated.timing(translateRef, {
-      toValue: flag ? 19 : 0,
+      toValue: flag ? 21 : 0,
       duration: 300,
       delay: 100,
       useNativeDriver: nativeDriver(),
@@ -39,46 +32,26 @@ const CustomSwitch: React.FC<_customSwitch> = ({
   };
 
   const backgroundColor = translateRef.interpolate({
-    inputRange: [0, 19],
-    outputRange: [bgColor, activeColor],
+    inputRange: [0, 21],
+    outputRange: [
+      colors.gray4 as string,
+      activeColor || (colors.primary as string),
+    ],
     extrapolate: 'clamp',
   });
-  const borderColor = translateRef.interpolate({
-    inputRange: [0, 19],
-    outputRange: [customTheme.colors.outline, activeColor],
-    extrapolate: 'clamp',
-  });
-  const circleBG = translateRef.interpolate({
-    inputRange: [0, 19],
-    outputRange: [customTheme.colors.outline, customTheme.colors.elevation1],
-    extrapolate: 'clamp',
-  });
-  const circleSize = translateRef.interpolate({
-    inputRange: [0, 19],
-    outputRange: [22, 24],
-    extrapolate: 'clamp',
-  });
-  const paddingHorizontal = translateRef.interpolate({
-    inputRange: [0, 19],
-    outputRange: [4, 2],
-    extrapolate: 'clamp',
-  });
-  const handlePress = () => {
-    setShow(!show);
-    onPress && onPress(!show, name ? name?.trim() : '');
-    !show ? handleSwitch(true) : handleSwitch(false);
-  };
+  const styles = switchStyles(colors);
   return (
-    <Pressable onPress={handlePress}>
-      <Animated.View
-        style={[
-          styles.containerStyle,
-          {backgroundColor, paddingHorizontal, borderColor},
-        ]}>
+    <Pressable
+      onPress={() => {
+        setIsActive(!isActive);
+        handleSwitch(!isActive);
+        onPress();
+      }}>
+      <Animated.View style={[styles.containerStyle, {backgroundColor}]}>
         <Animated.View
           style={[
             styles.circleStyle,
-            {backgroundColor: circleBG, height: circleSize, width: circleSize},
+            {backgroundColor: colors.white},
             {
               transform: [
                 {
@@ -94,27 +67,30 @@ const CustomSwitch: React.FC<_customSwitch> = ({
   );
 };
 
-export default CustomSwitch;
-
-const styles = StyleSheet.create({
-  circleStyle: {
-    borderRadius: 24,
-  },
-  containerStyle: {
-    width: rs(52),
-    height: rs(32),
-    justifyContent: 'center',
-    borderRadius: 100,
-    borderWidth: 2,
-  },
-  shadowValue: {
-    shadowColor: customTheme.colors.black,
-    shadowOffset: {
-      width: 0,
-      height: 2,
+const switchStyles = (colors: Colors) =>
+  StyleSheet.create({
+    circleStyle: {
+      width: 20,
+      height: 20,
+      borderRadius: 20,
     },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
-    elevation: 4,
-  },
-});
+    containerStyle: {
+      width: 44,
+      paddingVertical: 2,
+      paddingHorizontal: 2,
+      borderRadius: 100,
+    },
+    shadowValue: {
+      shadowColor: colors.gray0,
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.23,
+      shadowRadius: 2.62,
+
+      elevation: 4,
+    },
+  });
+
+export default CustomSwitch;
