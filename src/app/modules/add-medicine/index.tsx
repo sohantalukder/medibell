@@ -1,4 +1,4 @@
-import {ScrollView} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import React from 'react';
 import Container from '@layouts/Container.layout';
 import Header from '@components/header/Header.component';
@@ -9,6 +9,7 @@ import CustomInput from '@components/text-input/CustomInput.c';
 import rs from '@styles/responsiveSize.style.asset';
 import Button from '@components/button/button/Button.component';
 import {typographies} from '@styles/typographies.style.asset';
+import HowOften from './components/HowOften';
 
 const AddMedicine = () => {
   const colors = useTheme().colors as Colors;
@@ -54,11 +55,16 @@ const AddMedicine = () => {
           label="Dosage"
           placeholder="e.g 500mg"
         />
-        <CustomInput
-          onChangeText={() => {}}
-          label="Dosage"
-          placeholder="e.g 500mg"
-        />
+        <View>
+          <Text
+            style={[
+              typographies(colors).bodyLargeSemibold,
+              {...customPadding(0, 0, 5)},
+            ]}>
+            How Often
+          </Text>
+          <HowOften />
+        </View>
       </ScrollView>
     </Container>
   );

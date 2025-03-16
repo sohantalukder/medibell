@@ -54,6 +54,7 @@ const Profile = () => {
           backgroundColor: colors.primary,
           ...customPadding(10, 20, 20, 20),
         }}
+        textStyle={globalStyles.textAlignCenter}
       />
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -65,7 +66,7 @@ const Profile = () => {
             style={{width: rs(80), height: rs(80)}}
             editable={false}
           />
-          <View style={{marginTop: rs(16), gap: rs(8)}}>
+          <View style={{gap: rs(8)}}>
             <Text style={[typographies(colors).heading4]} numberOfLines={1}>
               Md. Sohan Talukder
             </Text>

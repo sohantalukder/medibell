@@ -52,7 +52,7 @@ export const themedGlobalStyles = (colors: Colors) =>
       shadowOpacity: 0.25,
       shadowRadius: 2.62,
       elevation: 5,
-      backgroundColor: colors.white,
+      backgroundColor: colors.rippleColor,
       borderRadius: 16,
     },
     noOptions: {

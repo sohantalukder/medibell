@@ -7,7 +7,7 @@ import {Colors} from '@styles/colors.style.asset';
 const RepeatIcon: React.FC<IconProps> = ({width = 24, height = 24, fill}) => {
   const colors = useTheme().colors as Colors;
   return (
-    <Svg width={width} height={height} viewBox="0 0 28 28" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 512 512" fill="none">
       <Path
         fill="none"
         stroke={fill || colors.default1}
