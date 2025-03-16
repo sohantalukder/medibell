@@ -8,16 +8,17 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import {DateTimePickerEvent} from '@react-native-community/datetimepicker';
-import moment from 'moment-timezone';
 import rs from '../../../assets/styles/responsiveSize.style.asset';
-import {customTheme} from '../../../assets/styles/colors.style.asset';
 import {typographies} from '../../../assets/styles/typographies.style.asset';
 import {
   customPadding,
   globalStyles,
 } from '../../../assets/styles/global.style.asset';
 import CustomPicker from '../CustomPicker';
-import ArrowDownIcon from '../../../assets/icons/ArrowDown.icon.assets';
+import {Colors} from '@styles/colors.style.asset';
+import {useTheme} from '@react-navigation/native';
+import DownArrowIcon from '@icons/DownArrow.icon';
+import dayjs from 'dayjs';
 
 interface dateTimeInputProps {
   label?: string;
@@ -32,19 +33,23 @@ interface dateTimeInputProps {
 const TimeInput: React.FC<dateTimeInputProps> = ({
   label,
   placeholder = 'Select Time',
-  defaultValue = new Date(),
+  defaultValue = null,
   onChange,
   style,
   name,
   containerStyle,
   leftIcon,
 }) => {
-  const [date, setDate] = useState<Date>(new Date(defaultValue));
+  const colors = useTheme().colors as Colors;
+  const [date, setDate] = useState<Date | null>(
+    defaultValue ? new Date(defaultValue) : null,
+  );
   const [show, setShow] = useState<boolean>(false);
   const dateChange = (event: DateTimePickerEvent, newDate?: Date) => {
     setShow(false);
     newDate && setDate(newDate);
-    onChange && onChange(newDate || date, name ? name?.trim() : '');
+    onChange &&
+      onChange(newDate || date || new Date(), name ? name?.trim() : '');
   };
   const handleOpenModal = () => {
     setShow(true);
@@ -55,8 +60,8 @@ const TimeInput: React.FC<dateTimeInputProps> = ({
         {label && (
           <Text
             style={[
-              typographies.interSemiBold16,
-              {color: customTheme.colors.black, marginBottom: rs(8)},
+              typographies(colors).bodyLargeSemibold,
+              {marginBottom: rs(8)},
             ]}>
             {label}
           </Text>
@@ -66,36 +71,34 @@ const TimeInput: React.FC<dateTimeInputProps> = ({
           activeOpacity={0.6}
           style={[
             styles.container,
-            {borderColor: customTheme.colors.grey3},
+            {borderColor: colors.gray3},
             containerStyle,
           ]}>
           <View style={[globalStyles.flexRow]}>
             {leftIcon}
             <Text
               style={[
-                typographies.interNormal16,
+                typographies(colors).bodyLargeRegular,
                 globalStyles.flexShrink1,
                 {
-                  color: !date
-                    ? customTheme.colors.grey3
-                    : customTheme.colors.black,
+                  color: !date ? colors.gray3 : colors.default1,
                 },
               ]}
               numberOfLines={1}>
-              {moment(date).format('hh:mm A') || placeholder}
+              {date ? dayjs(date).format('hh:mm A') : placeholder}
             </Text>
           </View>
           <View style={{transform: [{rotate: '270deg'}]}}>
-            <ArrowDownIcon
-              height={20}
-              width={20}
-              fill={customTheme.colors.pink}
-            />
+            <DownArrowIcon height={20} width={20} fill={colors.default1} />
           </View>
         </TouchableOpacity>
       </View>
       {show && (
-        <CustomPicker onChange={dateChange} value={date} mode={'time'} />
+        <CustomPicker
+          onChange={dateChange}
+          value={date || new Date()}
+          mode={'time'}
+        />
       )}
     </>
   );
@@ -105,7 +108,6 @@ export default TimeInput;
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: customTheme.colors.grey3,
     ...customPadding(17, 16, 17, 16),
     borderWidth: 1,
     width: '100%',
