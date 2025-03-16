@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
 import MedicineIcon from '@icons/Medicine.icon';
 import SettingIcon from '@icons/Setting.icon';
@@ -42,18 +42,14 @@ const QuickActions = () => {
       onPress: () => {},
     },
   ];
+  const styles = quickActionsStyles(colors);
   return (
     <View>
       <Text
         style={[typographies(colors).heading6, {...customMargin(16, 0, 16)}]}>
         Quick Actions
       </Text>
-      <View
-        style={{
-          ...globalStyles.flexRow,
-          flexWrap: 'wrap',
-          ...globalStyles.flexGrow1,
-        }}>
+      <View style={styles.container}>
         {actions.map((item, index) => (
           <Animated.View
             key={item.title}
@@ -76,13 +72,7 @@ const QuickActions = () => {
                     borderRadius: rs(16),
                     gap: rs(6),
                   }}>
-                  <View
-                    style={{
-                      backgroundColor: hexOpacityToColor(colors.white, 0.3),
-                      padding: rs(7),
-                      borderRadius: rs(12),
-                      alignSelf: 'flex-start',
-                    }}>
+                  <View style={styles.icon}>
                     <item.icon height={24} width={24} fill={colors.white} />
                   </View>
                   <Text
@@ -103,3 +93,18 @@ const QuickActions = () => {
 };
 
 export default QuickActions;
+
+const quickActionsStyles = (colors: Colors) =>
+  StyleSheet.create({
+    container: {
+      ...globalStyles.flexRow,
+      flexWrap: 'wrap',
+      ...globalStyles.flexGrow1,
+    },
+    icon: {
+      backgroundColor: hexOpacityToColor(colors.white, 0.3),
+      padding: rs(7),
+      borderRadius: rs(12),
+      alignSelf: 'flex-start',
+    },
+  });
