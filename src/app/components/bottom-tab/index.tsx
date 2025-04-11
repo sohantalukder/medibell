@@ -33,7 +33,7 @@ const BottomTab: React.FC<BottomTabProps> = ({tabLists}) => {
           backgroundColor: colors.background,
         },
         tabBarShowLabel: false,
-        animation: 'fade',
+        animation: 'shift',
       }}>
       {tabLists.map((item, index) => (
         <Tab.Screen

@@ -55,6 +55,10 @@ const basicRoutes: Array<RouteProps> = [
     component: HistoryLog,
     isHide: false,
     name: screens.historyLog,
+    options: {
+      animation: 'scale_from_center',
+      animationTypeForReplace: 'pop',
+    },
   },
   {
     accessLabel: 0,
