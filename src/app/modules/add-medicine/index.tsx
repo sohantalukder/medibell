@@ -17,13 +17,17 @@ import NotificationIcon from '@icons/Notification.icon';
 import CustomSwitch from '@components/switch/CustomSwitch';
 import RepeatIcon from '@icons/Repeat.icon';
 import AlarmIcon from '@icons/Alarm.icon';
+import {statusBar} from '@styles/properties.asset';
 
 const AddMedicine = () => {
   const colors = useTheme().colors as Colors;
   return (
-    <Container statusBarBg={colors.primary}>
+    <Container
+      statusBarBg={colors.primary}
+      statusBarStyle={statusBar.lightContent}>
       <Header
         text="Add Medicine"
+        textStyle={{color: colors.white}}
         showLeft={false}
         rightComponent={
           <Button

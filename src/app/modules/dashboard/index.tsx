@@ -13,13 +13,14 @@ import {screens} from '@routes/routeName.routes';
 import Slider from './components/Slider';
 import dashboardStyles from './styles/dashboard.styles';
 import QuickActions from './components/QuickActions';
+import {statusBar} from '@styles/properties.asset';
 
 const Dashboard = () => {
   const colors = useTheme().colors as Colors;
   const navigation = useNavigation();
   const styles = dashboardStyles(colors);
   return (
-    <Container>
+    <Container statusBarStyle={statusBar.darkContent}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{...customPadding(5, 20, 20, 20)}}

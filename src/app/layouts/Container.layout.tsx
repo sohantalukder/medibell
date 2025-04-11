@@ -24,7 +24,9 @@ const Container: React.FC<ContainerProps> = ({
         bgColor={statusBarBg || colors.background}
         showHeader={showHeader}
         barStyle={
-          statusBarStyle || colorScheme === 'dark'
+          statusBarStyle
+            ? statusBarStyle
+            : colorScheme === 'dark'
             ? statusBar.lightContent
             : statusBar.darkContent
         }

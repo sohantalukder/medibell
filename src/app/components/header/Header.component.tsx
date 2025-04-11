@@ -22,8 +22,8 @@ interface _props {
   style?: StyleProp<ViewStyle>;
   rightComponent?: React.ReactElement;
   text?: string;
-  textStyle?: TextStyle;
-  iconStyle?: ViewStyle;
+  textStyle?: StyleProp<TextStyle>;
+  iconStyle?: StyleProp<ViewStyle>;
   iconFill?: ColorValue;
   leftControl?: () => void;
   showLeft?: boolean;

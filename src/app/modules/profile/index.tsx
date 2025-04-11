@@ -20,6 +20,7 @@ import NotificationIcon from '@icons/Notification.icon';
 import EyeShowIcon from '@icons/EyeShow.icon';
 import HelpIcon from '@icons/Help.icon';
 import CustomSwitch from '@components/switch/CustomSwitch';
+import {statusBar} from '@styles/properties.asset';
 const Profile = () => {
   const colors = useTheme().colors as Colors;
   const profileArray = [
@@ -46,15 +47,17 @@ const Profile = () => {
     },
   ];
   return (
-    <Container statusBarBg={colors.primary}>
+    <Container
+      statusBarBg={colors.primary}
+      statusBarStyle={statusBar.lightContent}>
       <Header
         text="Profile"
+        textStyle={[globalStyles.textAlignCenter, {color: colors.white}]}
         showLeft={false}
         style={{
           backgroundColor: colors.primary,
           ...customPadding(10, 20, 20, 20),
         }}
-        textStyle={globalStyles.textAlignCenter}
       />
       <ScrollView
         showsVerticalScrollIndicator={false}
