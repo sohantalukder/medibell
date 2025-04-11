@@ -1,5 +1,12 @@
-import {View, Text, ScrollView, StyleSheet, SectionList} from 'react-native';
-import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  SectionList,
+  InteractionManager,
+} from 'react-native';
+import React, {useLayoutEffect, useState} from 'react';
 import Container from '@layouts/Container.layout';
 import Header from '@components/header/Header.component';
 import {useTheme} from '@react-navigation/native';
@@ -13,6 +20,7 @@ import CheckFillIcon from '@icons/CheckFill.icon';
 import CloseFillIcon from '@icons/CloseFill.icon';
 import hexOpacityToColor from '@helper/utilities/hexOpacityToColor';
 import dayjs from 'dayjs';
+import Animated, {FadeInDown} from 'react-native-reanimated';
 const Chip = ({
   title,
   isSelected,
@@ -24,13 +32,12 @@ const Chip = ({
 }) => {
   const colors = useTheme().colors as Colors;
   return (
-    <View style={{maxWidth: rs(100)}}>
+    <View style={{maxWidth: rs(100), height: rs(35)}}>
       <Button
         text={title}
         onPress={onPress}
         wrapStyle={{
           borderRadius: rs(200),
-          height: rs(35),
           paddingHorizontal: rs(10),
           backgroundColor: isSelected ? colors.primary : colors.white,
         }}
@@ -75,6 +82,7 @@ const HistoryLogStatus = ({onPress}: {onPress: (status: string) => void}) => {
 };
 const HistoryLog = () => {
   const colors = useTheme().colors as Colors;
+  const [renderData, setRenderData] = useState(false);
   const historyLogData = [
     {
       date: '2025-01-24T00:00:00',
@@ -159,6 +167,14 @@ const HistoryLog = () => {
     },
   ];
 
+  useLayoutEffect(() => {
+    if (!renderData) {
+      InteractionManager.runAfterInteractions(() => {
+        setRenderData(true);
+        console.log('renderData', renderData);
+      });
+    }
+  }, [renderData]);
   // Transform from original structure to sectioned format
   const modifiedHistoryData = historyLogData.map(dateGroup => ({
     date: dateGroup.date,
@@ -205,8 +221,13 @@ const HistoryLog = () => {
         keyExtractor={(item, index) => `${item.name}-${item.time}-${index}`}
         stickySectionHeadersEnabled={true}
         showsVerticalScrollIndicator={false}
-        renderItem={({item}) => (
-          <View style={styles.card}>
+        initialNumToRender={10}
+        renderItem={({item, index}) => (
+          <Animated.View
+            entering={FadeInDown.delay(index * 100)
+              .springify()
+              .damping(10)}
+            style={styles.card}>
             <View
               style={[
                 styles.colorBar,
@@ -252,7 +273,7 @@ const HistoryLog = () => {
                 {item.status}
               </Text>
             </View>
-          </View>
+          </Animated.View>
         )}
         renderSectionHeader={({section}) => (
           <Text
@@ -260,7 +281,7 @@ const HistoryLog = () => {
               typographies(colors).bodyLargeBold,
               {
                 backgroundColor: colors.background,
-                ...customPadding(5, 0, 5, 0),
+                ...customPadding(10, 0, 10, 0),
               },
             ]}>
             {dayjs(section.date).format('dddd, MMMM YYYY')}
