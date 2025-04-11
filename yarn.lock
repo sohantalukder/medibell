@@ -3870,11 +3870,6 @@ get-symbol-description@^1.1.0:
     es-errors "^1.3.0"
     get-intrinsic "^1.2.6"
 
-gifted-charts-core@0.1.60:
-  version "0.1.60"
-  resolved "https://registry.yarnpkg.com/gifted-charts-core/-/gifted-charts-core-0.1.60.tgz#f14b7fed12431d6efd27e7cda52217f11aee8c29"
-  integrity sha512-xXkDyBYO14y3op/kDLUGUaTmmqJiYKlTujDE5QPS6XRR9qeHjsLc5wO3LDkr6THVc5LrER1xHeNmTuxMmUYYrw==
-
 github-from-package@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/github-from-package/-/github-from-package-0.0.0.tgz#97fb5d96bfde8973313f20e8288ef9a167fa64ce"
@@ -5989,13 +5984,6 @@ react-native-gesture-handler@^2.24.0:
     "@egjs/hammerjs" "^2.0.17"
     hoist-non-react-statics "^3.3.0"
     invariant "^2.2.4"
-
-react-native-gifted-charts@^1.4.58:
-  version "1.4.58"
-  resolved "https://registry.yarnpkg.com/react-native-gifted-charts/-/react-native-gifted-charts-1.4.58.tgz#e33c86760be83edd0ae5e45c38b076113e40376c"
-  integrity sha512-evCvyQCogaYCDrQRTyM+sv/EwlwXhtx+UnPCIyZ7H+KDKA5K+JHdNl5WNqipbkYWDnbj0T+PrgnZCgf0vlQdrg==
-  dependencies:
-    gifted-charts-core "0.1.60"
 
 react-native-haptic-feedback@^2.3.3:
   version "2.3.3"
