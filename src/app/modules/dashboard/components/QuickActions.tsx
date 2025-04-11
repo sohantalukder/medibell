@@ -4,7 +4,7 @@ import MedicineIcon from '@icons/Medicine.icon';
 import SettingIcon from '@icons/Setting.icon';
 import CalenderIcon from '@icons/Calender.icon';
 import TimeIcon from '@icons/Time.icon';
-import {useTheme} from '@react-navigation/native';
+import {useNavigation, useTheme} from '@react-navigation/native';
 import {Colors} from '@styles/colors.style.asset';
 import {typographies} from '@styles/typographies.style.asset';
 import rs from '@styles/responsiveSize.style.asset';
@@ -13,33 +13,34 @@ import Animated, {FadeInDown} from 'react-native-reanimated';
 import RippleButton from '@components/button/ripple/CustomRipple.c';
 import LinearGradient from 'react-native-linear-gradient';
 import hexOpacityToColor from '@helper/utilities/hexOpacityToColor';
-
+import {screens} from '@routes/routeName.routes';
 const QuickActions = () => {
   const colors = useTheme().colors as Colors;
+  const navigation = useNavigation();
   const actions = [
     {
       title: 'Medicines',
       icon: MedicineIcon,
       colors: [colors.secondary, hexOpacityToColor(colors.secondary1, 0.9)],
-      onPress: () => {},
+      onPress: () => navigation.navigate(screens.medicine as never),
     },
     {
       title: 'Calender View',
       icon: CalenderIcon,
       colors: [colors.tertiary, hexOpacityToColor(colors.tertiary1, 0.9)],
-      onPress: () => {},
+      onPress: () => navigation.navigate(screens.calenderView as never),
     },
     {
       title: 'History Log',
       icon: TimeIcon,
       colors: [colors.quaternary, hexOpacityToColor(colors.quaternary1, 0.9)],
-      onPress: () => {},
+      onPress: () => navigation.navigate(screens.historyLog as never),
     },
     {
       title: 'Refill Tracker',
       icon: SettingIcon,
       colors: [colors.quinary, hexOpacityToColor(colors.quinary1, 0.9)],
-      onPress: () => {},
+      onPress: () => navigation.navigate(screens.refillTracker as never),
     },
   ];
   const styles = quickActionsStyles(colors);
