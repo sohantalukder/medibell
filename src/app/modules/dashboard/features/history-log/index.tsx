@@ -61,23 +61,25 @@ const HistoryLogStatus = ({onPress}: {onPress: (status: string) => void}) => {
     setSelected(status);
   };
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{
-        ...customPadding(10, 20, 10, 20),
-        gap: rs(10),
-        backgroundColor: colors.background,
-      }}>
-      {buttons.map((item, index) => (
-        <Chip
-          title={item}
-          key={index}
-          isSelected={selected === item}
-          onPress={() => handleChangeStatus(item)}
-        />
-      ))}
-    </ScrollView>
+    <View>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{
+          ...customPadding(10, 20, 0, 20),
+          gap: rs(10),
+          backgroundColor: colors.background,
+        }}>
+        {buttons.map((item, index) => (
+          <Chip
+            title={item}
+            key={index}
+            isSelected={selected === item}
+            onPress={() => handleChangeStatus(item)}
+          />
+        ))}
+      </ScrollView>
+    </View>
   );
 };
 const HistoryLog = () => {
