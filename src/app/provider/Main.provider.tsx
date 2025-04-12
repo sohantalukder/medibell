@@ -5,6 +5,8 @@ import {Provider} from 'react-redux';
 import {globalStyles} from '../assets/styles/global.style.asset';
 import configStore from '../states/store';
 import NavigationProvider from './Navigation.provider';
+import {QueryClientProvider} from '@tanstack/react-query';
+import tanStackConfig from '@packages/tanstack/tanstack.config';
 
 interface _props {
   children: React.ReactNode;
@@ -12,11 +14,13 @@ interface _props {
 const MainProvider: React.FC<_props> = ({children}) => {
   return (
     <SafeAreaProvider>
-      <Provider store={configStore}>
+      <QueryClientProvider client={tanStackConfig}>
+        <Provider store={configStore}>
           <GestureHandlerRootView style={globalStyles.flex1}>
             <NavigationProvider>{children}</NavigationProvider>
           </GestureHandlerRootView>
-      </Provider>
+        </Provider>
+      </QueryClientProvider>
     </SafeAreaProvider>
   );
 };

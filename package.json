@@ -46,6 +46,8 @@
     "@react-native/metro-config": "0.78.0",
     "@react-native/typescript-config": "0.78.0",
     "@realm/babel-plugin": "^0.2.0",
+    "@tanstack/eslint-plugin-query": "^5.72.2",
+    "@tanstack/react-query": "^5.72.2",
     "@types/jest": "^29.5.13",
     "@types/react": "^19.0.0",
     "@types/react-test-renderer": "^19.0.0",

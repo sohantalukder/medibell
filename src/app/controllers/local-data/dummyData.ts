@@ -1,5 +1,4 @@
 const dummyData = {
-  Chats: require('./data/ChatData.json'),
-  Calls: require('./data/CallsData.json'),
+  Medicine: require('./data/MedicineData.json'),
 };
 export default dummyData;

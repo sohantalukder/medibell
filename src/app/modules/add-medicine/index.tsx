@@ -1,5 +1,5 @@
-import {ScrollView, Text, View} from 'react-native';
-import React from 'react';
+import {FlatList, ScrollView, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
 import Container from '@layouts/Container.layout';
 import Header from '@components/header/Header.component';
 import {useTheme} from '@react-navigation/native';
@@ -18,7 +18,56 @@ import CustomSwitch from '@components/switch/CustomSwitch';
 import RepeatIcon from '@icons/Repeat.icon';
 import AlarmIcon from '@icons/Alarm.icon';
 import {statusBar} from '@styles/properties.asset';
-
+import RippleButton from '@components/button/ripple/CustomRipple.c';
+import useGetMedicine from './hooks/useGetMedicine.hook';
+import {debounceHandler} from '@helper/hooks/debounce.hook';
+import {IMedicine} from './interface/interface';
+const MedicineName = () => {
+  const colors = useTheme().colors as Colors;
+  const [medicine, setMedicine] = useState('');
+  const {mutate: getMedicine, data} = useGetMedicine();
+  const handleDebounce = debounceHandler(
+    (...args: unknown[]) => getMedicine({search: args[0] as string}),
+    500,
+  );
+  const medicineList = data?.body || [];
+  return (
+    <>
+      <CustomInput
+        onChangeText={handleDebounce}
+        label="Medicine Name"
+        placeholder="Enter Medicine Name"
+        defaultValue={medicine}
+      />
+      {medicineList.length > 0 && (
+        <View style={styles(colors).listContainer}>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            scrollEnabled={false}
+            style={{
+              ...customPadding(16, 16, 16, 16),
+              gap: rs(10),
+            }}
+            data={medicineList as IMedicine[]}
+            keyExtractor={(_, index) => index.toString()}
+            renderItem={({item}) => (
+              <RippleButton
+                onPress={() => {
+                  setMedicine(item.brandName);
+                }}>
+                <View>
+                  <Text style={{...typographies(colors).bodyMediumSemibold}}>
+                    {item.brandName} - {item.strength}
+                  </Text>
+                </View>
+              </RippleButton>
+            )}
+          />
+        </View>
+      )}
+    </>
+  );
+};
 const AddMedicine = () => {
   const colors = useTheme().colors as Colors;
   return (
@@ -56,11 +105,7 @@ const AddMedicine = () => {
           ...customPadding(20, 20, 20, 20),
           gap: rs(20),
         }}>
-        <CustomInput
-          onChangeText={() => {}}
-          label="Medicine Name"
-          placeholder="Enter Medicine Name"
-        />
+        <MedicineName />
         <CustomInput
           onChangeText={() => {}}
           label="Dosage"
@@ -167,3 +212,20 @@ const AddMedicine = () => {
 };
 
 export default AddMedicine;
+
+const styles = (colors: Colors) =>
+  StyleSheet.create({
+    listContainer: {
+      position: 'absolute',
+      top: 100,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      zIndex: 1000,
+      gap: rs(10),
+      maxHeight: rs(200),
+      marginHorizontal: rs(20),
+      backgroundColor: colors.white,
+      borderRadius: rs(16),
+    },
+  });
